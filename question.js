@@ -47,4 +47,14 @@ let questions = [
     },
     "b"
   ),
+  new Question(
+    "5-What is my favourite book?",
+    {
+      a: "F*ck it",
+      b: "Saftirik",
+      c: "My Left Leg",
+      d: "Journey Journal",
+    },
+    "d"
+  ),
 ];
