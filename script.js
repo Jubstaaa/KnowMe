@@ -95,14 +95,14 @@ function optionSelected(option) {
 let counter;
 function startTimer(time) {
   ui.time_second.textContent = time;
-  ui.time_text.textContent = "Kalan Süre";
+  ui.time_text.textContent = "Time Left";
   counter = setInterval(timer, 1000);
   function timer() {
     ui.time_second.textContent = time;
     time--;
     if (time < 0) {
       clearInterval(counter);
-      ui.time_text.textContent = "Süre Bitti";
+      ui.time_text.textContent = "Time Over";
       let answer = quiz.getQuestion().rightAnswer;
       for (let option of ui.option_list.children) {
         if (option.querySelector("span b").textContent == answer) {
