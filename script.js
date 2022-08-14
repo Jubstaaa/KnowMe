@@ -74,6 +74,7 @@ ui.btn_replay.addEventListener("click", function () {
 
 function optionSelected(option) {
   let answer = option.querySelector("span b").textContent;
+  let rightAnswer = quiz.getQuestion().rightAnswer;
   let question = quiz.getQuestion();
   if (question.checkAnswer(answer)) {
     quiz.correctAnswer += 1;
@@ -82,6 +83,12 @@ function optionSelected(option) {
   } else {
     option.classList.add("incorrect");
     option.insertAdjacentHTML("beforeend", ui.incorrectIcon);
+    for (let option of ui.option_list.children) {
+      if (option.querySelector("span b").textContent == rightAnswer) {
+        option.classList.add("correct");
+        option.insertAdjacentHTML("beforeend", ui.correctIcon);
+      }
+    }
   }
 
   for (let i = 0; i < ui.option_list.children.length; i++) {
